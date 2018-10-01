@@ -1,0 +1,2 @@
+FLASK_CONFIG=heroku
+MAIL_USERNAME=un5t0ppab13

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+        .error {
+            height: 100px;
+            width: 220px;
+            margin: auto;
+            border: 1px red solid;
+            padding: 0px;
+            position: relative;
+            top: 100px;
+            border-radius: 5%;
+            color: red;
+         }
+        .login {
+            height: 100px;
+            width: 165px;
+            margin: auto;
+            border: 1px #CCC solid;
+            padding: 10px;
+            border-radius: 5%;
+        }
+        .login input {
+            padding: 5px;
+            margin: 5px
+        }
+    </style>>
+    <title>Project: Sign Me Up</title>
+</head>
+<body>
+    <div class="login">
+        <form action="/signup" method="post">
+            <input type="text" placeholder="Username" name="username" required>
+            <input type="text" placeholder="Password" name="password"> 
+            <input type="password" placeholder="Verify Password" name="passwordx2">
+            <input type="text" placeholder="Email" name="email">  
+
+            <input type="submit" value="Signup", name=submit>
+        </form>
+    </div>
+    {% if error %}
+        <div class="error">
+            <p>{{ error }}</p>
+        </div>
+    {% endif %}
+
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
