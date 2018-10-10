@@ -8,7 +8,10 @@ app.config['DEBUG'] = True
 
 @app.route("/")
 def index():
-    return render_template('index.html', title = "Sign Up")
+    encoded_error = request.args.get("error")
+    return render_template('index.html', title = "Sign Up", error=encoded_error and cgi.escape(encoded_error, quote=True))
+#def index():
+    #return render_template('index.html', title = "Sign Up")
 
 @app.route("/signup", methods=['POST'])
 def signup():
